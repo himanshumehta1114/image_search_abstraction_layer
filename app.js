@@ -5,6 +5,8 @@ const request = require('request');
 const search = require('./search.js');
 const historyDb = require('./history.js');
 
+app.use(express.static(__dirname + '/public'));
+
 app.get('/imagesearch/:keyword', (req,res) => {
     var keyword = req.params.keyword;
     var count = req.query.count;
